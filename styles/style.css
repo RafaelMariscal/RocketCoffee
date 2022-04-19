@@ -1,0 +1,272 @@
+:root {
+  --backgrond: #000;
+  --text-color: #FFF;
+  --button: #8257E5;
+  --border: #29292E;
+  --border-menu-mobile: #A8A8B3;
+  --text-color-menu-mobile: #E1E1E6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-style: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.mobile {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: var(--backgrond);
+}
+
+body>img {
+  position: absolute;
+  z-index: -1;
+}
+
+img[alt='blur1'] {
+  bottom: 0;
+  left: 0;
+}
+
+img[alt='blur2'] {
+  top: 0;
+  right: 0;
+}
+
+.container {
+  max-width: 918px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+#logo {
+  background-image: url(/assets/logo-desktop.svg);
+  width: 43px;
+  height: 50px;
+}
+
+#logo-mobile {
+  background-image: url(/assets/logo-mobile.svg);
+  width: 171px;
+  height: 33px;
+}
+
+header,
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  padding: 47px 0 43px;
+}
+
+
+nav ul {
+  gap: 32.5px;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid var(--button);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 200ms;
+  padding: 11px 38px;
+  padding: 10px 47px 10px 30px;
+}
+
+header button {
+  padding: 11px 38px;
+}
+
+#btn-box {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+#btn-box img {
+  position: absolute;
+  width: 8px;
+  top: 12px;
+  right: 25px;
+}
+
+button:hover {
+  box-shadow: 0 0 4px 2px var(--button);
+}
+
+#menu {
+  background-image: url(/assets/menu-buguer-open.svg);
+  width: 24px;
+  height: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.open {
+  background-image: url(/assets/menu-buguer-close.svg) !important;
+  height: 24px !important;
+}
+
+.selected {
+  border-left: 5px solid var(--button) !important;
+}
+
+#content-box {
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1,
+p {
+  font-size: 80px;
+  font-weight: 700;
+  text-align: center;
+}
+
+p {
+  color: var(--backgrond);
+  text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+}
+
+main img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1210px) {
+  #content-box {
+    width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  h1,
+  p {
+    font-size: 60px;
+  }
+
+  #content-box {
+    display: block;
+    width: 918px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    max-width: 375px;
+  }
+
+  .mobile {
+    display: block;
+    text-align: center;
+    text-shadow: none;
+    color: var(--text-color);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  main>p {
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: 400;
+    max-width: 350px;
+  }
+
+  #logo,
+  nav,
+  header button,
+  img[alt='blur1'],
+  img[alt='blur2'] {
+    display: none;
+  }
+
+  header {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 25px 35px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+  }
+
+  main {
+    justify-content: space-between;
+    height: 60vh;
+  }
+
+  #content-box {
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  h1,
+  p {
+    font-size: 44px;
+    margin: 0 auto;
+  }
+
+  #hb-menu {
+    position: absolute;
+    top: 85px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--backgrond);
+  }
+
+  #hb-menu a {
+    color: var(--text-color-menu-mobile);
+  }
+
+  #hb-menu li {
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 14px 30px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  #hb-menu>ul>li>span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--button);
+  }
+}
